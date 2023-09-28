@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{$pagetitle}</title>
+    <meta charset='utf-8' />
+    <meta name="description" content="{$description}">
+    <meta name="keywords" content="{$keywords}">
+    <link type="text/css" rel="stylesheet" href="/static/common/css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="{$templets}/style/css/footer.css" />
+    <link type="text/css" rel="stylesheet" href="{$templets}/style/css/nav.css" />
+    <link type="text/css" rel="stylesheet" href="{$templets}/style/css/body.css" />
+    <link type="text/css" rel="stylesheet" href="{$templets}/style/css/article-body.css" />
+    <script type="text/javascript" src="/static/common/js/jquery.js"></script>
+    <script type="text/javascript" src="/static/common/js/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="{$templets}/style/js/home.js"></script>
+    <!-- tag::meta() -->
+</head>
+
+<body>
+    <!-- include header -->
+    <div class="page_main">
+        <div class="wrap">
+            <div class="page_breadcrumb c1"> {$position} </div>
+            <div class="cl">
+                <!--左侧导航-->
+                <div class="page_left_nav">
+                    <ul>
+                        <li class="home"><a href="/{$current}/new">最新</a></li>
+                        <li class="hot "><a href="/{$current}/hot">热点</a></li>
+                        <li class="tuwen"><a href="/{$current}/photo">图文</a></li>
+                    </ul>
+                </div>
+                <!--中间文章详情-->
+                <div class="page_con" id="fenx">
+                    <div class="titlem">
+                        <h1>{$title}</h1>
+                    </div>
+                    <!--正文-->
+                    <div class="cl">
+                        <div class="wenzhangp fl">文章正文</div>
+                        <div class="fr" style="height:50px; line-height:48px;" align="right">发布时间：{date('Y-m-d H:i',$addtime)}</div>
+                    </div>
+                    <div class="descp"> 
+                        {$text} 
+                    </div>
+                </div>
+                <!--右侧广告位-->
+                <div class="page_right">
+                    <div class="ta cl">
+                        <!--标签-->
+                        <div class="tag">
+                            <div class="tag1">标签</div>
+                            <div class="tagcon  cl">
+                                <ul>
+                                    <!--foreach tag::tags(20)-->
+                                    <li class="tagi fl"> <a class="tagi{$__i}" href="/tags/{$id}">{$tagsname}</a> </li>
+                                    <!--/foreach-->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bbl cl">
+                            <!-- tag::ad(1) -->
+                        </div>
+                        <div class="tag">
+                            <div class="tag1">热门文章</div>
+                            <div class="arthot cl">
+                                <ul>
+                                    <!-- foreach tag::arclist("flag=c&row=10")-->
+                                    <!-- if $index<=3 -->
+                                    <li class="red"> <a href="{$url}" target="_blank">{$title}</a> </li>
+                                    <!-- else -->
+                                    <li class="gray"> <a href="{$url}" target="_blank">{$title}</a> </li>
+                                    <!-- /if -->
+                                    <!-- /foreach-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--右下角工具条-->
+    <div class="page_toolbar">
+        <div class="jjd">
+            <div class="tuu fl cl"> <a href="/"><img src="{$templets}/style/images/homer.png"/></a> </div>
+            <!--尖角div-->
+            <div class=" jjd1 fl cl">
+                <div id="demo" class="toolbar_side1">
+                    <div class="fx">首页</div>
+                </div>
+            </div>
+        </div>
+        <div class="jjd">
+            <div class="tuu fl cl"> <a href="#uyan_frame"><img src="{$templets}/style/images/pinglun.png"/></a> </div>
+            <!--尖角div-->
+            <div class=" jjd1 fl cl">
+                <div id="demo" class="toolbar_side1">
+                    <div class="fx">评论</div>
+                </div>
+            </div>
+        </div>
+        <div class="jjd">
+            <div class="tuu fl cl"> <a href="#fenx"><img src="{$templets}/style/images/fenxiangr.png"/></a> </div>
+            <!--尖角div-->
+            <div class=" jjd1 fl cl">
+                <div id="demo" class="toolbar_side1">
+                    <div class="fx">分享</div>
+                </div>
+            </div>
+        </div>
+        <div class="jjd">
+            <div class="tuu fl cl"> <a onclick="gotop()"><img src="{$templets}/style/images/topr.png"/></a> </div>
+            <!--尖角div-->
+            <div class=" jjd1 fl cl">
+                <div id="demo" class="toolbar_side1">
+                    <div class="fx">Top</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- include footer -->
+    <script>
+    $(function() {
+        $("img").lazyload({
+            effect: "fadeIn",
+            threshold: 200,
+            placeholder: '/static/common/images/nopic.png',
+        });
+    });
+
+    function gotop() {
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
+    }
+    </script>
+</body>
+
+</html>

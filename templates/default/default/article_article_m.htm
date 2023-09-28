@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{$pagetitle}</title>
+	<meta charset='utf-8' />
+	<meta name="viewport" content="width=device-width,user-scalable=no" />
+	<meta name="description" content="{$description}">
+	<meta name="keywords" content="{$keywords}"> 
+	<link rel="canonical" href="{$web_url}">
+	<link type="text/css" rel="stylesheet" href="/static/common/css/reset.css" />
+	<link type="text/css" rel="stylesheet" href="{$templets}/style/css/footer_m.css" />
+	<link type="text/css" rel="stylesheet" href="{$templets}/style/css/nav_m.css" />
+	<link type="text/css" rel="stylesheet" href="{$templets}/style/css/body_m.css" />
+	<link type="text/css" rel="stylesheet" href="{$templets}/style/css/article-body_m.css" />
+	<script type="text/javascript" src="/static/common/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/common/js/jquery.lazyload.min.js"></script>
+</head>
+<body>
+	<!-- include header -->
+	<!--面包屑-->
+	<div class="page_breadcrumb c1">
+		<a href="/" class="home_ico">{$sitename}</a>正文
+	</div>
+	<!--中间文章详情-->
+	<div class="page_con " id="fenx">	
+		<div class="titlem"><h1>{$title}</h1></div>
+		<!--正文-->
+			<div class="cl" >
+				<div class="wenzhangp fl">文章正文</div>
+				<div class="fr" style="height:50px; line-height:48px;padding-right:15px;" align="right">发布时间：{date('Y-m-d H:i',$addtime)}</div>
+		    </div>
+
+		<div class="descp">
+			{$text}
+		</div>
+		<!--评论-->
+		<!-- <div class="wenzhangp ">文章评论</div>
+		<div class="pl">
+			
+		</div> -->
+	</div>
+	<!--标签-->
+	<div class="page_tag cl">
+		<ul>
+			<li class="tagp">标签:</li>
+			<div class="ti">
+				<!--foreach tag::tags(20)-->
+				<a href="/tags/{$id}"><div class="tagi tagi{$__i} fl cl"><li>{$tagsname}</li></div></a>
+				<!--/foreach-->
+			</div>
+		</ul>
+	</div>
+	<!-- include footer -->
+	<script>
+		$(function() {
+			$("img").lazyload({
+				effect: "fadeIn",
+				threshold: 200,
+				placeholder : '/static/common/images/nopic.png',
+			});
+		});
+	</script>
+</body>
+</html>

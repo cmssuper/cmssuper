@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{$pagetitle}</title>
+    <meta charset='utf-8' />
+    <meta name="keywords" content="{$keywords}" />
+    <meta name="description" content="{$description}" />
+    <link type="text/css" rel="stylesheet" href="/static/common/css/reset.css" />
+    <link type="text/css" rel="stylesheet" href="{$templets}/style/css/footer.css" />
+    <link type="text/css" rel="stylesheet" href="{$templets}/style/css/nav.css" />
+    <link type="text/css" rel="stylesheet" href="{$templets}/style/css/body.css" />
+    <script type="text/javascript" src="/static/common/js/jquery.js"></script>
+    <script type="text/javascript" src="/static/common/js/jquery.lazyload.min.js"></script>
+    <script type="text/javascript" src="{$templets}/style/js/home.js"></script>
+    <!-- tag::meta() -->
+</head>
+
+<body>
+    <!-- include header -->
+    <div class="page_main">
+        <div class="wrap">
+            <!--面包屑-->
+            <div class="page_breadcrumb cl">
+                <div class="fl cl">
+                    {$position}
+                </div>
+            </div>
+            <div class="cl">
+                <!--左侧导航-->
+                <div class="page_left_nav">
+                    <ul>
+                        <li class="home"><a href="/{$current}/new">最新</a></li>
+                        <li class="hot "><a href="/{$current}/hot">热点</a></li>
+                        <li class="tuwen"><a href="/{$current}/tu">图文</a></li>
+                    </ul>
+                </div>
+                <div class="page_center page_arclist">
+                    <!-- foreach tag::tags(10) -->
+                    <a href='/tags/{$id}' class='tagc[field:highlight /]'>{$tagsname}</a>
+                    <!-- /foreach -->
+                </div>
+                <!--右侧广告位-->
+                <div class="page_right">
+                    <div class="ta cl">
+                        <!--标签-->
+                        <div class="tag">
+                            <div class="tag1">标签</div>
+                            <div class="tagcon  cl">
+                                <ul>
+                                    <!--foreach tag::tags(20)-->
+                                    <li class="tagi fl"> <a href="/tags/{$id}">{$tagsname}</a> </li>
+                                    <!--/foreach-->
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="bbl cl">
+                            <!-- tag::ad(1) -->
+                        </div>
+                        <div class="tag">
+                            <div class="tag1">热门文章</div>
+                            <div class="arthot cl">
+                                <ul>
+                                    <!-- foreach tag::arclist("flag=c&row=10")-->
+                                    <!-- if $index<=3 -->
+                                    <li class="red"><i>{$index}</i> <a href="{$url}" target="_blank">{$title}</a> </li>
+                                    <!-- else -->
+                                    <li class="gray"><i>{$index}</i> <a href="{$url}" target="_blank">{$title}</a> </li>
+                                    <!-- /if -->
+                                    <!-- /foreach-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- include footer -->
+    <script>
+        $(function () {
+            $("img").lazyload({
+                effect: "fadeIn",
+                threshold: 200,
+                placeholder: '/static/common/images/nopic.png',
+            });
+        });
+    </script>
+</body>
+
+</html>

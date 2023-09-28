@@ -1,0 +1,42 @@
+<div id="jspre_rightmenu">
+    <div id="jspre_blog-calendar">
+    </div>
+    <div class="nav">
+        <h3>导航</h3>
+        <ul>
+            <li><a href="/" class="first">首页</a></li>
+            <!-- foreach $sitenav -->
+            <li><a href="/{$ename}" class="{if $ename==$current}current{/if}">{$title}</a></li>
+            <!-- /foreach -->
+        </ul>
+    </div>
+    
+    <h3>热点推荐</h3>
+    <ul>
+        <!-- foreach tag::arclist("orderby=click&row=5")-->
+        <li><a href="{$url}" title="{$title}" target="_blank">{$title}</a></li>
+        <!--/foreach-->
+
+    </ul>
+    <h3>最新发布</h3>
+    <ul>
+        <!-- foreach tag::arclist("row=5")-->
+        <li><a href="{$url}" title="{$title}">{$title}</a></li>
+        <!--/foreach-->
+    </ul>
+    <h3>友情链接</h3>
+    <ul>
+        <div class="link-content">
+            <div class="jspre_content-main-wrap">
+                <div class="jspre_content-wrapper">
+                    <div class="flink">
+                        <!--foreach tag::flink(20)-->
+                        <li><a href="{$url}" target="_blank">{$sitename}</a></li>
+                        <!--/foreach-->
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ul>
+</div>

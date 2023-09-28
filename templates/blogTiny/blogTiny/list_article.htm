@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>{$pagetitle}</title>
+		<meta charset="utf-8" />
+		<meta name="description" content="{$description}" />
+		<meta name="keyword" content="{$keywords}" />
+		<link href="/templates/blogTiny/style/style.css" rel="stylesheet" media="screen" type="text/css" />
+		<!-- tag::meta() -->
+	</head>
+
+	<body>
+		<div id="app_home">
+			<!-- include header -->
+			<div id="app_main">
+				<div id="maincontent">
+					<div class="forflow">
+						<!--foreach tag::arclist("typeid=$typeid&row=20") -->
+						<div class="app_day">
+							<div class="daytitle">{date('Y-m-d H:i',$addtime)}</div>
+							<div class="posttitle"><a class="posttitle2" href="{$url}">{$title}</a></div>
+							<div class="postcon">
+								<div class="c_b_p_desc">摘要: {cut($description,150,'...')}<a href="{$url}">阅读全文</a></div>
+							</div>
+							<div class="clear"></div>
+							<div class="postdesc">点击量:{$click}</div>
+							<div class="clear"></div>
+						</div>
+						<!--/foreach-->
+					</div>
+				</div>
+				<div id="app_sidebar">
+					<div id="sidebarmain">
+						<div id="leftcontentcontainer">
+							<div id="blog-sidecolumn">
+								<div id="sidebar_toptags" class="sidebar-block"></div>
+								<div id="sidebar_categories">
+									<div id="app_sidebar_postcategory" class="catlistpostcategory sidebar-block">
+										<h3 class="catlisttitle">热点文章</h3>
+										<ul>
+											<!--foreach tag::arclist("typeid=$typeid&row=10&orderby=click")-->
+											<li><a href="{$url}" title="{$title}" target="_blank">{$title}</a></li>
+											<!--/foreach-->
+										</ul>
+									</div>
+									<div id="app_sidebar_postarchive" class="catlistpostarchive sidebar-block">
+										<h3 class="catlisttitle">最新文章</h3>
+										<ul>
+											<!--foreach tag::arclist("typeid=$typeid&row=10&orderby=id")-->
+											<li><a href="{$url}" title="{$title}" target="_blank">{$title}</a></li>
+											<!--/foreach-->
+										</ul>
+									</div>
+								</div>
+								<div id="sidebar_topviewedposts" class="sidebar-block">
+									<div id="topview_posts_wrap">
+										<div class="catlistview">
+											<h3 class="catlisttitle">友情连接</h3>
+											<div id="topviewpostsblock">
+												<ul>
+													<div class="link-content">
+														<div class="app_content-main-wrap">
+															<div class="app_content-wrapper">
+																<div class="flink">
+																	<ul>
+																		<!--foreach tag::flink(20)-->
+																		<li><a href="{$url}" target="_blank">{$sitename}</a></li>
+																		<!--/foreach-->
+																	</ul>
+																	<div class="clear"></div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<div class="clear"></div>
+			<div id="app_footer">Copyright By {$sitename} All rights reserved. Powered by <a href="http://www.cmssuper.com/" target="_blank">cmsSuper</a></div>
+		</div>
+	</body>
+</html>

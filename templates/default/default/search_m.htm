@@ -1,0 +1,76 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{$pagetitle}</title>
+	<meta charset='utf-8' />
+	<meta name="viewport" content="width=device-width,user-scalable=no" />
+	<meta name="description" content="{$description}"> 
+	<meta name="keywords" content="{$keywords}"> 
+	<link rel="canonical" href="{$web_url}">
+	<link type="text/css" rel="stylesheet" href="/static/common/css/reset.css" />
+	<link type="text/css" rel="stylesheet" href="{$templets}/style/css/footer_m.css" />
+	<link type="text/css" rel="stylesheet" href="{$templets}/style/css/nav_m.css" />
+	<link type="text/css" rel="stylesheet" href="{$templets}/style/css/body_m.css" />
+	<script type="text/javascript" src="/static/common/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/common/js/jquery.lazyload.min.js"></script>
+</head>
+<body>
+	<!-- include header -->
+	<!--面包屑-->
+	<div class="page_breadcrumb cl">
+		<div class="fl cl"><a href="/" class="home_ico">{$sitename}</a>搜索结果</div>
+	</div>
+
+	<!-- 正文 -->
+	<div class="page_center page_arclist cl">
+		<!--foreach tag::arclist("keyword=$keyword&row=20",true) -->
+		<div class="cl list_title" >
+			<div class="fl big">
+				<a href="{$url}" target="_blank"  ><img src="/static/common/images/nopic.png"  data-original="{$thumb}"  /></a>
+			</div>
+			<div class="fl descr" >
+				<div class="tit"><a href="{$url}" target="_blank" ><div class="titt" >{cut($title,30,'...')}</div></a></div>
+				<div class="desc_txt">{cut($description,60,'...')}</div>
+			</div>
+			<div class="time">
+				{date('m-d H:i',$addtime)}
+			</div>
+		</div>
+		<!-- /foreach -->			
+		<div class="page_link">{tag::pagelink()}</div>
+
+	</div>			
+	<!--标签-->
+	<div class="page_tag cl">
+		<ul>
+			<li class="tagp">标签:</li>
+			<div class="ti">
+				<!--foreach tag::tags(20)-->
+				<a href="/tags/{$id}"><div class="tagi tagi{$__i} fl cl"><li>{$tagsname}</li></div></a>
+				<!--/foreach-->
+			</div>
+		</ul>
+	</div>
+	<!-- include footer -->
+	<script>
+	//高亮显示关键字
+	$(".titt").each(function() {
+		var name=$("#key").val();
+		var myHtml=$(this).html();
+		var rex = new RegExp(name, 'g');
+		var t=myHtml.replace(rex, "<span class='gl'>"+name+"</span>");
+		$(this).html(t);
+		
+	})
+	$(function() {
+		$("img").lazyload({
+			effect: "fadeIn",
+			threshold: 200,
+			placeholder : '/static/common/images/nopic.png',
+		});
+	});
+</script>
+
+</body>
+</html>

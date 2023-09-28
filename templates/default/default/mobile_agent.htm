@@ -1,0 +1,15 @@
+<!-- if IS_MOBILE_SITE_OPEN -->
+<meta name="mobile-agent" content="format=html5;url={$mobileUrl}"/>
+<link rel="alternate" media="only screen and (max-width: 640px)" href="{$mobileUrl}" >
+<script type="text/javascript">
+	if(window.location.href.indexOf("?via=")<0){
+		if(/AppleWebKit.*Mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){
+			try{
+				if(/Android|Windows Phone|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent)){
+					window.location.href="{$mobileUrl}";
+				}
+			}catch(e){}
+		}
+	}
+</script>
+<!-- /if -->

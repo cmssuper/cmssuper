@@ -1,0 +1,10 @@
+/*正文*/
+.page_con { width: 96%; margin:0 2% 0 2%;max-width: 640px; margin-left: auto;margin-right: auto;}
+.page_con .titlem{font-size:16px;color:#333;width: 96%; margin:0 2% 0 2%;}
+.page_con .fenxiang{width: 96%; margin:0 2% 0 2%;}
+.page_con .descp p img{max-width: 96%;}
+.page_con .descp{font-size:16px;;line-height: 1.5em;color:#333;max-width: 96%;margin:10px 2% 10px 2%;}
+.page_con .wenzhangp{color: #615f60;display:block;width:30%;height:40px; line-height:40px;background:url("../images/tit_m.png")  no-repeat 10px center;background-size:3px 23px; font-size: 18px; padding-left: 30px; }
+.page_con .pl{width: 96%; margin:0 2% 0 2%;}
+
+

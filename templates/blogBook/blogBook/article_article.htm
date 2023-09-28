@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{$pagetitle}</title>
+  <meta charset='utf-8' />
+  <meta name="description" content="{$description}">
+  <meta name="keywords" content="{$keywords}">
+  <link href="{$templets}/style/style.css" rel="stylesheet" media="screen" type="text/css" />
+  <!-- tag::meta() -->
+</head>
+
+<body>
+  <div id="jspre_header">
+    <div id="jspre_headertitle">
+      <div id="title"><a id="header1_headertitle" class="headermaintitle" href="/"><img src="/logo/main.png" alt="{$sitename}"> </a></div>
+      <div id="subtitle"></div>
+    </div>
+  </div>
+  <div id="jspre_main">
+    <div id="post_detail">
+
+      <div class="jspre_post">
+        <h2>{$title} </h2>
+        <div id="cnblogs_post_body">
+          <p>阅读: {$click} 发表于 {date('Y-m-d H:i',$addtime)}
+          <p>&nbsp;{$text}</p>
+        </div>
+        <div id="mysignature"></div>
+        <div class="clear"></div>
+      </div>
+    </div>
+    <div id="divcommentshow"></div>
+    <p id="jspre_footer">
+      Copyright © 2020 {$sitename} All rights reserved. Powered by <a href="http://www.cmssuper.com/" target="_blank">cmsSuper</a>
+    </p>
+  </div>
+  <!-- include sidebar -->
+</body>
+
+</html>

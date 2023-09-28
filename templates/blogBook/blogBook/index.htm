@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>{$pagetitle}</title>
+	<meta charset='utf-8' />
+	<meta name="description" content="{$description}">
+	<meta name="keywords" content="{$keywords}">
+	<link href="{$templets}/style/style.css" rel="stylesheet" media="screen" type="text/css" />
+	<!-- tag::meta() -->
+</head>
+
+<body>
+
+	<div id="jspre_header">
+		<div id="jspre_headertitle">
+			<div id="title"><a id="header1_headertitle" class="headermaintitle" href="/"><img src="/logo/main.png" alt="{$sitename}"> </a></div>
+			<div id="subtitle"></div>
+		</div>
+	</div>
+	<div id="jspre_main">
+		<!--foreach tag::arclist("row=20") -->
+		<div class="jspre_post">
+			<h2><a id="homepage1_homepagedays_dayslist_ctl01_daylist_titleurl_3" href="{$url}" title="[field:fulltitle /]">{$title}</a></h2>
+			<div class=c_b_p_desc>摘要: 阅读: {$click}&nbsp 发表于{date('Y-m-d',$addtime)} {cut($description,150,'...')}
+				<a class="c_b_p_desc_readmore " href="{$url}">阅读全文</a></div>
+		</div>
+		<!--/foreach-->
+		<p id="jspre_footer">
+			Copyright © 2020 {$sitename} All rights reserved. Powered by <a href="http://www.cmssuper.com/" target="_blank">cmsSuper</a>
+		</p>
+
+	</div>
+	<!-- include sidebar -->
+
+</body>
+
+</html>

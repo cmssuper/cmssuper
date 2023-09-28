@@ -1,0 +1,44 @@
+/*全局标签属性样式，勿修改*/
+body, h1, h2, h3, h4, h5, h6, hr, p, span, blockquote, dl, dt, dd, ul, ol, li, pre, form, button { margin:0; padding:0;}
+body, button, input, select, textarea { font:14px/1.5 'Microsoft Yahei', SimSun, "Arial Narrow", HELVETICA;-webkit-font-smoothing:antialiased; }
+h1, h2, h3, h4, h5, h6 { font-size:100%; }
+address, cite, dfn, var { font-style:normal; }
+code, kbd, pre, samp { font-family:courier new, courier, monospace; }
+small { font-size:12px; }
+ul, ol { list-style:none; }
+td, th, div { word-break: break-all; word-wrap: break-word; }
+iframe { display:block; }
+a { text-decoration:none; color:#666; }
+a:hover { color:#000; }
+sup { vertical-align:text-top; }
+sub { vertical-align:text-bottom; }
+legend { color:#000; }
+img { border:0; }
+button, input, select, textarea { font-size:100%; outline:none; resize:none; }
+input[radio], input[checkbox] { vertical-align: -3px; }
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video { display:block; margin:0; padding:0; }
+mark { background:#ff0; }
+blockquote{ padding:5px 20px; background-color:#f8f8f8; }
+* { -webkit-text-size-adjust:none; }
+i,em{
+ vertical-align: baseline; font-family: inherit; font-weight:inhert; font-style:inhert; outline: 0; padding: 0;    margin: 0; border: 0;}
+/*清除浮动*/
+.cl:after, .clearfix:after { content: "."; display: block; height: 0; clear: both; visibility: hidden; }
+.cl, .clearfix { zoom: 1; }
+.clear { line-height: 0px; clear: both; height: 0px; font-size:0px; }
+/*浮动*/
+.fl { float:left; }
+.fr { float:right; }
+/*基本样式*/
+.b { font-weight:bold; }
+.hidden { display: none; }
+.text_l { text-align:left; }
+.text_c { text-align:center; }
+.text_r { text-align:right; }
+/*字体大小*/
+.fs-12 { font-size:12px; }
+.fs-14 { font-size:14px; }
+.fs-16 { font-size:16px; }
+.fs-18 { font-size:18px; }
+.fs-22 { font-size:22px; }
+

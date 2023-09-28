@@ -1,0 +1,23 @@
+<div class="nav-searchbox">
+	<div class="wrap cl">
+		<!--Logo-->
+		<div class="searchbox_ym fl">
+			<a href="/"><img src="/logo/main.png" alt="{$sitename}"> </a>
+		</div>
+		<div style="float:left;padding-left:100px;padding-top:28px;">
+			<form action="/plus/search/" method="post">
+				<fieldset class="search">
+					<input id="key" class="box" type="text" name="keyword" {if isset($keyword)} value="{$keyword}" {/if} placeholder="看我想看" />
+					<button class="btn" value="搜索" type="submit"></button>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+<div class="sitenav">
+	<div class="wrap cl"> <a href="/" {if 'index'==$current} class="cur" {/if}>首页</a>
+		<!-- foreach $sitenav -->
+		<a href="/{$ename}" {if $ename==$current} class="cur" {/if}>{$title}</a>
+		<!-- /foreach -->
+	</div>
+</div>

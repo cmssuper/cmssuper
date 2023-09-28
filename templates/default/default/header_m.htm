@@ -1,0 +1,41 @@
+
+<!--Logo-->
+<div class="nav-logo"> <a class="logo" href="/"><img src="/logo/main.png?h=50" alt="{$sitename}"></a> <a class="topnav" id="topnav"></a> </div>
+<div class="nav-menu" id="nav-menu">
+    <ul>
+        <li><a href="/" {if 'index'==$current} class="cur" {/if}>首页</a></li>
+        <!-- foreach $sitenav -->
+        <li><a href="/{$ename}" {if $ename==$current} class="cur" {/if}>{$title}</a></li>
+        <!-- /foreach -->
+        <li class="closenav"><a href="javascript:;"><img src="{$templets}/style/images/close.png"></a></li>
+    </ul>
+</div>
+<!-- 导航 -->
+<div class="nav-class"> 
+    <a href="/{$current}/new"  class="home {if $showtype=='new'}current{/if}"> 最新</a> 
+    <a href="/{$current}/hot" class="hot {if $showtype=='hot'}current{/if}"> 热点</a> 
+    <a href="/{$current}/photo" class="tuwen {if $showtype=='photo'}current{/if}">图文</a> 
+</div>
+<!--搜索框-->
+<div class="nav-searchbox">
+    <div>
+        <form action="/plus/search/" method="post">
+            <fieldset class="search">
+                <input id="key" class="box cl" type="text" name="keyword" {if isset($keyword)} value="{$keyword}" {/if} placeholder="看我想看" />
+                <button class="btn cl" value="搜索" type="submit"></button>
+            </fieldset>
+        </form>
+    </div>
+</div>
+<script type="text/javascript">
+$("#topnav").click(function() {
+    $("body").css('overflow', 'hidden');
+    $("#nav-menu").slideDown();
+    $(".nav-logo").addClass("fixed");
+});
+$(".closenav").click(function() {
+	$("body").css('overflow', 'auto');
+    $("#nav-menu").slideUp('fast');
+    $(".nav-logo").removeClass("fixed");
+});
+</script>

@@ -1,0 +1,13 @@
+<div id="app_header">
+    <div id="blogtitle">
+        <h1><span style="font-size:36px;"><a href="/">{$sitename}</a></span></h1>
+    </div>
+    <div id="app_navigator">
+        <ul id="navlist">
+            <li><a href="/" class="first">首页</a></li>
+            <!-- foreach $sitenav -->
+            <li><a href="/{$ename}" {if $ename==$current} class="cur" {/if}>{$title}</a></li>
+            <!-- /foreach -->
+        </ul>
+    </div>
+</div>

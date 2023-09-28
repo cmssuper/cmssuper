@@ -1,0 +1,33 @@
+
+<div id="top" class="footer_scroll">
+	<a onclick="gotop()"></a>
+</div>
+<div class="footer ">
+	<div class="footer_nav cl">
+	</div>
+	{if $url=="news"||empty($url)}
+	<div class="footer_frlink">
+		<!--友情链接-->
+		<ul>
+			<li class="frlinkp">友情链接:</li>
+			<div class="frlink1">
+				<!--foreach tag::flink(20)-->
+				<a href="{$url}" target="_blank">
+					<li>{$sitename}</li>
+				</a>
+				<li>|</li>
+				<!--/foreach-->
+
+			</div>
+		</ul>
+	</div>
+	{/if}
+	<div class="footer_bj ">
+		Copyright © 2020 {$sitename} All rights reserved. Powered by <a href="http://www.cmssuper.com/" target="_blank">cmsSuper</a>
+	</div>
+</div>
+<script>
+	function gotop() {
+		$('html, body').animate({ scrollTop: 0 }, 'slow');
+	}
+</script>

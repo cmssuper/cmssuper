@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport\" content="width=device-width,user-scalable=no" />
+	<title>{$pagetitle}</title>
+	<meta charset='utf-8' />
+	<meta name="description" content="{$description}"> 
+	<meta name="keywords" content="{$keywords}"> 
+	<link type="text/css" rel="stylesheet" href="/static/common/css/reset.css" />
+	<link type="text/css" rel="stylesheet" href="{$templets}/style/css/footer_m.css" />
+	<link type="text/css" rel="stylesheet" href="{$templets}/style/css/nav_m.css" />
+	<link type="text/css" rel="stylesheet" href="{$templets}/style/css/body_m.css" />
+	<script type="text/javascript" src="/static/common/js/jquery.js"></script>
+	<script type="text/javascript" src="/static/common/js/jquery.lazyload.min.js"></script>
+	<!-- tag::meta() -->
+</head>
+<body>
+	<!-- include header -->
+	<!--面包屑-->
+	<div class="page_breadcrumb cl">
+		<a href="/" class="home_ico">{$sitename}</a> {if $typename}<a href="/{$current}">{$typename}</a>{/if} {$showtypes[$showtype]}
+	</div>
+
+	<!-- 正文 -->
+	<div class="page_center page_arclist cl">
+		<!--foreach tag::arclist("row=20") -->
+		<div class="cl list_title" >
+			<div class="fl big">
+				<a href="{$url}" target="_blank"  ><img src="/static/common/images/nopic.png"  data-original="{$thumb}"  /></a>
+			</div>
+			<div class="fl descr" >
+				<div class="tit"><a href="{$url}">{$title}</a></div>
+				<div class="desc_txt">{cut($description,60,'...')}</div>
+			</div>
+			<div class="time">
+				{date('m-d H:i',$addtime)}
+			</div>
+		</div>
+		<!-- /foreach -->			
+
+	</div>			
+	<!--标签-->
+	<div class="page_tag cl">
+		<ul>
+			<li class="tagp">标签:</li>
+			<div class="ti">
+				<!--foreach tag::tags(20)-->
+				<a href="/tags/{$id}"><div class="tagi tagi{$__i} fl cl"><li>{$tagsname}</li></div></a>
+				<!--/foreach-->
+			</div>
+		</ul>
+	</div>
+	<!-- include footer -->
+	<script>
+		$(function() {
+			$("img").lazyload({
+				effect: "fadeIn",
+				threshold: 200,
+				placeholder : '/static/common/images/nopic.png',
+			});
+		});
+	</script>
+
+</body>
+</html>

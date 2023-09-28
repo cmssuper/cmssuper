@@ -1,0 +1,24 @@
+/*回到顶部*/
+.footer_scroll{position: fixed; z-index: 999; right: 11px;bottom: 25px; display:none; }
+.footer_scroll a{background:  url(../images/icon-top_m.png) no-repeat center;display: block;width: 35px; height: 35px;background-size:35px 35px; opacity: 0.8;}
+.footer_scroll a:hover{background:  url(../images/icon-toph_m.png) no-repeat center;display: block;width: 35px; height: 35px;background-size:35px 35px; }
+
+/*低部*/
+.footer{ text-align: center; color: #999;  background-color: #FAFAFA; 
+	border-top:1px solid  #d7dadb; width: 100%; max-width: 640px; margin-left: auto;margin-right: auto; }
+.footer .footer_nav{width:100%;max-width: 640px; margin-left: auto;margin-right: auto;}
+.footer .footer_nav li{float: left; text-align: center; padding-top: 20px;box-sizing;}
+
+/*友情链接*/
+.footer .footer_frlink{width:100%;}
+.footer .footer_frlink ul{text-align:left;width:96%;margin:10px 2% 10px 2%;border: 1px solid #ebeded;padding-bottom: 10px;box-sizing;}
+.footer .footer_frlink ul li{padding-left:8px;padding-right: 5px;display: inline;font-size: 16px;box-sizing;}
+.footer .footer_frlink ul .frlinkp{color: #615f60;display:block;width:102px;height:40px; line-height:37px;background:url("../images/tit_m.png")  no-repeat 10px center;background-size:3px 23px; font-size: 20px; text-align: right;  }
+.footer .footer_frlink ul .frlink1{padding-left: 18px;box-sizing;}
+
+/*版权*/
+.footer .footer_bj{width:100%;height:50px;background-color:#f4f4f4;text-align: center;padding-top:20px;box-sizing;font-size: 10px;}
+
+
+
+
