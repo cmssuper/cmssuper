@@ -2,7 +2,7 @@
 
 define('DS', DIRECTORY_SEPARATOR);
 define('REMOTEAPI', "http://api.yumingcms.com");
-define('VERSION', '4.3.0');
+define('VERSION', '4.3.1');
 
 include __DIR__ . "/functions.php";
 include __DIR__ . "/dede.func.php";

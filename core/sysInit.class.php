@@ -284,7 +284,7 @@ CREATE TABLE `yuming` (
   KEY `name` (`name`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-INSERT INTO `config` (`varName`, `varValue`) VALUES ('downPicture', '1'), ('site_code', ''), ('appkey', ''), ('softversion', '4.3.0'), ('sitemap',	'1'), ('visitCount', ''), ('speed',	'50'), ('baidu_tui_token', ''), ('spider', '1'), ('visitTime', ''), ('crawlNewsClass',	''), ('arcTimer', '[]'), ('autoNewsClass', '');
+INSERT INTO `config` (`varName`, `varValue`) VALUES ('downPicture', '1'), ('site_code', ''), ('appkey', ''), ('softversion', '4.3.1'), ('sitemap',	'1'), ('visitCount', ''), ('speed',	'50'), ('baidu_tui_token', ''), ('spider', '1'), ('visitTime', ''), ('crawlNewsClass',	''), ('arcTimer', '[]'), ('autoNewsClass', '');
 EOF;
 		// End
 		$sqls = str_replace('USING BTREE', '', $sqls);
