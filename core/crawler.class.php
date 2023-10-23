@@ -316,9 +316,12 @@ class crawler
 				   |  \xF4[\x80-\x8F][\x80-\xBF]{2}     # plane 16
                )*$/xs';
         $gbrule = '/^(?:[\x09\x0A\x0D\x20-\x7E]|[\xA1-\xFE][\xA0-\xFF])*$/xs';
-        if (preg_match("/(?<=charset=).*(?=['\"])/isU", $v, $i) && in_array(strtolower($i[0]), array('utf-8', 'gb2312', 'gbk')))
+        if (preg_match("/(?<=charset=).*(?=['\"])/isU", $v, $i) && in_array(strtolower($i[0]), array('utf-8', 'gb2312', 'gbk'))) {
             $charset = strtolower($i[0]);
-        else {
+        }
+        if (preg_match("/(?<=meta\scharset=['\"]).*(?=['\"])/isU", $v, $i) && in_array(strtolower($i[0]), array('utf-8', 'gb2312', 'gbk'))) {
+            $charset = strtolower($i[0]);
+        } else {
             $v = preg_replace('/0-9a-z\-_/i', '', Html2Text($v));
             $v0 = substr($v, 0, 20);
             $v1 = substr($v, 0, 21);

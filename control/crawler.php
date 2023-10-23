@@ -5,7 +5,7 @@ if (!defined('IN_SYS')) {
 
 define("APPNAME", 'CRAWLER');
 
-class crawler_controller extends crawlerControl
+class crawler_controller extends controller
 {
     public function __construct()
     {
